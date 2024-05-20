@@ -32,6 +32,7 @@
     <body>
         <!-- Barra de navegación -->
         <div class="sidebar">
+            <img src="./Image/2.jpeg" alt="Logo"> 
             <a href="javascript:void(0);" onclick="showSection('proveedores')">Proveedores</a>
             <a href="javascript:void(0);" onclick="showSection('productos')">Productos</a>
             <a href="javascript:void(0);" onclick="showSection('categorias')">Categorias</a>
@@ -43,7 +44,7 @@
         <h1>WEB SYTEM SALES</h1>
 
         <div class="container section" id="proveedores" style="display: none;">
-            <img src="https://wiwink.com/images/proveedor_1.png" alt="" >
+            <img src="./Image/10.jpg" alt="" >
             <div class="registroProveedor">
                 <form method="post" name="registroproveedor" action="guardarProveedor">
                     <table border="2">
@@ -98,7 +99,7 @@
 
 
         <div class="container section" id="productos" style="display: none;">
-            <img src="https://cdn-icons-png.flaticon.com/512/1312/1312205.png" alt="">
+            <img src="./Image/4.jpeg" alt="">
             <div class="registroProducto">
                 <form method="post" name="registroproducto" action="guardarProducto">
                     <table border="2">
@@ -221,7 +222,7 @@
 
 
         <div class="container section" id="categorias" style="display: none;">
-            <img src="https://wiwink.com/images/proveedor_1.png" alt="" >
+            <img src="./Image/5.jpeg" alt="" >
             <div class="registroCategoria">
                 <form method="post" name="registrocategoria" action="guardarCategoria">
                     <table border="2">
@@ -244,7 +245,7 @@
 
 
         <div class="container section" id="lineas" style="display: none;">
-            <img src="https://wiwink.com/images/proveedor_1.png" alt="" >
+            <img src="./Image/6.jpeg" alt="" >
             <div class="registroLinea">
                 <form method="post" name="registrolinea" action="guardarLinea">
                     <table border="2">
@@ -266,7 +267,7 @@
         </div>
 
         <div class="container section" id="Marcas" style="display: none;">
-            <img src="https://wiwink.com/images/proveedor_1.png" alt="" >
+            <img src="./Image/1.jpeg" alt="" >
             <div class="registroMarca">
                 <form method="post" name="registromarca" action="guardarMarca">
                     <table border="2">
@@ -289,7 +290,7 @@
 
 
         <div class="container section" id="UnidadMedida" style="display: none;">
-            <img src="https://wiwink.com/images/proveedor_1.png" alt="" >
+            <img src="Image/8.jpg" alt="" >
             <div class="registroUnidadMedida">
                 <form method="post" name="registrounidadMedida" action="guardarUnidadMedida">
                     <table border="2">

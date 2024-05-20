@@ -1,10 +1,11 @@
-
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
     padding: 20px;
     transition: background-color 0.3s ease;
+    margin-left: 220px; /* Ajustado para dar espacio a la barra lateral */
 }
+
 .sidebar {
     height: 100%;
     width: 200px;
@@ -13,7 +14,14 @@ body {
     left: 0;
     background-color: #111;
     padding-top: 20px;
-    overflow-x: hidden; /* Para que no haya scroll horizontal */
+    overflow-x: hidden; /* Prevenir el desplazamiento horizontal */
+}
+
+.sidebar img {
+    display: block;
+    margin: 0 auto 20px;
+    width: 100px;
+    height: auto;
 }
 
 .sidebar a {
@@ -28,20 +36,35 @@ body {
 .sidebar a:hover {
     color: #f1f1f1;
 }
+
 h1 {
     text-align: center;
     color: #0B2447;
     margin-bottom: 30px;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+.main-content {
+    margin-left: 220px; /* Asegura que el contenido principal no esté debajo de la barra lateral */
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     margin-top: 20px;
+}
+
+table {
+    width: 80%;
+    max-width: 1000px;
+    border-collapse: collapse;
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
+    margin-bottom: 20px;
 }
 
 table, th, td {
@@ -57,13 +80,10 @@ tr:hover {
     background-color: #f5f5f5;
 }
 
-
 a {
     color: #0B2447;
     text-decoration: none;
     transition: color 0.3s ease;
-    display: block;
-    margin-top: 10px;
 }
 
 a:hover {
@@ -71,29 +91,29 @@ a:hover {
 }
 
 img {
-    float: right;
-    margin-left: 20px;
     max-width: 100px;
     height: auto;
-}
-
-.container {
-    display: flex;
-    align-items: center;
     margin-bottom: 20px;
 }
 
-.container > div {
-    flex: 1;
-    margin-right: 20px;
-    width: 50%;
-    margin-bottom: 10px;
-}
-
-
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
+    body {
+        margin-left: 0;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidebar a {
+        float: left;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-top: 60px; /* Espacio para la barra lateral en responsive */
     }
 
     .container > div {
