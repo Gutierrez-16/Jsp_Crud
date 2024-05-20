@@ -1,6 +1,6 @@
 package Servlet;
 
-import Control.AccionesUnidadMedina;
+import Control.AccionesUnidadMedida;
 import Modelo.UnidadMedida;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -19,17 +19,15 @@ public class guardarUnidadMedida extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             
-            String nombre,estadoUnidadMedida;
+            String nombre;
             
             nombre = request.getParameter("nombre");
-            estadoUnidadMedida = request.getParameter("estadoUnidadMedida");
             
             UnidadMedida e = new UnidadMedida();
             
             e.setNombreUnidadMedida(nombre);
-            e.setEstadoUnidadMedida(estadoUnidadMedida);
             
-            int estatus = AccionesUnidadMedina.registrarUnidadMedida(e);
+            int estatus = AccionesUnidadMedida.registrarUnidadMedida(e);
             
             if(estatus > 0 ){
                 response.sendRedirect("registroUnidadMedida.jsp");

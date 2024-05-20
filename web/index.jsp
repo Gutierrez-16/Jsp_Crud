@@ -9,7 +9,7 @@
 <%@page import="Modelo.Linea"%>
 <%@page import="Control.AccionesMarca"%>
 <%@page import="Modelo.Marca"%>
-<%@page import="Control.AccionesUnidadMedina"%>
+<%@page import="Control.AccionesUnidadMedida"%>
 <%@page import="Modelo.UnidadMedida"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
@@ -34,8 +34,14 @@
         <div class="sidebar">
             <a href="javascript:void(0);" onclick="showSection('proveedores')">Proveedores</a>
             <a href="javascript:void(0);" onclick="showSection('productos')">Productos</a>
+            <a href="javascript:void(0);" onclick="showSection('categorias')">Categorias</a>
+            <a href="javascript:void(0);" onclick="showSection('lineas')">lineas</a>
+            <a href="javascript:void(0);" onclick="showSection('Marcas')">Marcas</a>
+            <a href="javascript:void(0);" onclick="showSection('UnidadMedida')">UnidadMedida</a>
         </div>
+
         <h1>WEB SYTEM SALES</h1>
+
         <div class="container section" id="proveedores" style="display: none;">
             <img src="https://wiwink.com/images/proveedor_1.png" alt="" >
             <div class="registroProveedor">
@@ -89,6 +95,8 @@
                 <a href="consultarProveedor.jsp">Consultar todos los proveedor</a>
             </div>
         </div>
+
+
         <div class="container section" id="productos" style="display: none;">
             <img src="https://cdn-icons-png.flaticon.com/512/1312/1312205.png" alt="">
             <div class="registroProducto">
@@ -171,7 +179,7 @@
                             <td>
                                 <select name="idUnidadMedida">
                                     <%
-                                        List<UnidadMedida> unidadMedidas = AccionesUnidadMedina.getAllUnidadMedida();
+                                        List<UnidadMedida> unidadMedidas = AccionesUnidadMedida.getAllUnidadMedida();
                                         for (UnidadMedida unidadMedida : unidadMedidas) {
                                     %>
                                     <option value="<%= unidadMedida.getIdUnidadMedida()%>"><%= unidadMedida.getNombreUnidadMedida()%></option>
@@ -210,6 +218,98 @@
                 <a href="consultarProducto.jsp">Consultar todos los productos</a>
             </div>
         </div>
+
+
+        <div class="container section" id="categorias" style="display: none;">
+            <img src="https://wiwink.com/images/proveedor_1.png" alt="" >
+            <div class="registroCategoria">
+                <form method="post" name="registrocategoria" action="guardarCategoria">
+                    <table border="2">
+                        <tr>
+                            <td>nombre </td>
+                            <td><input type="text" name="nombre" size="30"></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2"><input type="submit" value="Registrar Categoria"></td>
+                        </tr>
+                    </table>
+                </form>
+
+            </div>
+            <div class="containerConsulta">
+                <a href="consultarCategoria.jsp">Consultar todos los categoria</a>
+            </div>
+        </div>
+
+
+        <div class="container section" id="lineas" style="display: none;">
+            <img src="https://wiwink.com/images/proveedor_1.png" alt="" >
+            <div class="registroLinea">
+                <form method="post" name="registrolinea" action="guardarLinea">
+                    <table border="2">
+                        <tr>
+                            <td>nombre </td>
+                            <td><input type="text" name="nombre" size="30"></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2"><input type="submit" value="Registrar linea"></td>
+                        </tr>
+                    </table>
+                </form>
+
+            </div>
+            <div class="containerConsulta">
+                <a href="consultarLinea.jsp">Consultar todos los lineas</a>
+            </div>
+        </div>
+
+        <div class="container section" id="Marcas" style="display: none;">
+            <img src="https://wiwink.com/images/proveedor_1.png" alt="" >
+            <div class="registroMarca">
+                <form method="post" name="registromarca" action="guardarMarca">
+                    <table border="2">
+                        <tr>
+                            <td>nombre </td>
+                            <td><input type="text" name="nombre" size="30"></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2"><input type="submit" value="Registrar Marca"></td>
+                        </tr>
+                    </table>
+                </form>
+
+            </div>
+            <div class="containerConsulta">
+                <a href="consultarMarca.jsp">Consultar todos los Marcas</a>
+            </div>
+        </div>
+
+
+        <div class="container section" id="UnidadMedida" style="display: none;">
+            <img src="https://wiwink.com/images/proveedor_1.png" alt="" >
+            <div class="registroUnidadMedida">
+                <form method="post" name="registrounidadMedida" action="guardarUnidadMedida">
+                    <table border="2">
+                        <tr>
+                            <td>nombre </td>
+                            <td><input type="text" name="nombre" size="30"></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2"><input type="submit" value="Registrar UnidadMedida"></td>
+                        </tr>
+                    </table>
+                </form>
+
+            </div>
+            <div class="containerConsulta">
+                <a href="consultarUnidadMedida.jsp">Consultar todos los UnidadMedida</a>
+            </div>
+        </div>
+
         <script>
             function showTable(tableId) {
                 var table = document.getElementById(tableId);
@@ -220,5 +320,6 @@
                 }
             }
         </script>
+
     </body>
 </html>

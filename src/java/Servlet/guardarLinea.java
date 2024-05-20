@@ -19,15 +19,13 @@ public class guardarLinea extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             
-            String nombre,estadoLinea;
+            String nombre;
             
             nombre = request.getParameter("nombre");
-            estadoLinea = request.getParameter("estadoLinea");
             
             Linea e = new Linea();
             
             e.setNombreLinea(nombre);
-            e.setEstadoLinea(estadoLinea);
             
             int estatus = AccionesLinea.registrarLinea(e);
             

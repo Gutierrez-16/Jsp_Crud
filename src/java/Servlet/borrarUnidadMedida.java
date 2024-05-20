@@ -4,7 +4,7 @@
  */
 package Servlet;
 
-import Control.AccionesUnidadMedina;
+import Control.AccionesUnidadMedida;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -34,7 +34,7 @@ public class borrarUnidadMedida extends HttpServlet {
             
             int id = Integer.parseInt(request.getParameter("id"));
             
-            int estatus = AccionesUnidadMedina.borrarUnidadMedida(id);
+            int estatus = AccionesUnidadMedida.borrarUnidadMedida(id);
             
             if(estatus > 0 ){
                 response.sendRedirect("consultarUnidadMedida.jsp");

@@ -15,10 +15,9 @@ public class AccionesCategoria {
         Conexion cx = new Conexion();
         int status = 0;
         try {
-            String sql = "insert into Categoria(NombreCategoria, EstadoCategoria) values(?,?);";
+            String sql = "insert into Categoria(NombreCategoria) values(?);";
             PreparedStatement ps = cx.conectar().prepareStatement(sql);
             ps.setString(1, categoria.getNombreCategoria());
-            ps.setString(2, categoria.getEstadoCategoria());
             status = ps.executeUpdate();
             System.out.println("Registrado Categoria exitoso");
             ps.close();

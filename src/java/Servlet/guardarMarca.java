@@ -19,15 +19,13 @@ public class guardarMarca extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             
-            String nombre,estadoMarca;
+            String nombre;
             
             nombre = request.getParameter("nombre");
-            estadoMarca = request.getParameter("estadoMarca");
             
             Marca e = new Marca();
             
             e.setNombreMarca(nombre);
-            e.setEstadoMarca(estadoMarca);
             
             int estatus = AccionesMarca.registrarMarca(e);
             

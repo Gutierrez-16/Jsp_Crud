@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.*;
 
-public class AccionesUnidadMedina {
+public class AccionesUnidadMedida {
 
     //Conexion cx = new Conexion();
     public static int registrarUnidadMedida(UnidadMedida unidadMedida) {
@@ -15,10 +15,9 @@ public class AccionesUnidadMedina {
         Conexion cx = new Conexion();
         int status = 0;
         try {
-            String sql = "insert into UnidadMedida(NombreUnidadMedida, EstadoUnidadMedida) values(?,?);";
+            String sql = "insert into UnidadMedida(NombreUnidadMedida) values(?);";
             PreparedStatement ps = cx.conectar().prepareStatement(sql);
             ps.setString(1, unidadMedida.getNombreUnidadMedida());
-            ps.setString(2, unidadMedida.getEstadoUnidadMedida());
             status = ps.executeUpdate();
             System.out.println("Registrado UnidadMedida exitoso");
             ps.close();

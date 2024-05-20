@@ -19,15 +19,13 @@ public class guardarCategoria extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             
-            String nombre,estadoCategoria;
+            String nombre;
             
             nombre = request.getParameter("nombre");
-            estadoCategoria = request.getParameter("estadoCategoria");
             
             Categoria e = new Categoria();
             
             e.setNombreCategoria(nombre);
-            e.setEstadoCategoria(estadoCategoria);
             
             int estatus = AccionesCategoria.registrarCategoria(e);
             

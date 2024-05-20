@@ -15,10 +15,9 @@ public class AccionesLinea {
         Conexion cx = new Conexion();
         int status = 0;
         try {
-            String sql = "insert into Linea(NombreLinea, EstadoLinea) values(?,?);";
+            String sql = "insert into Linea(NombreLinea) values(?);";
             PreparedStatement ps = cx.conectar().prepareStatement(sql);
             ps.setString(1, linea.getNombreLinea());
-            ps.setString(2, linea.getEstadoLinea());
             status = ps.executeUpdate();
             System.out.println("Registrado Linea exitoso");
             ps.close();

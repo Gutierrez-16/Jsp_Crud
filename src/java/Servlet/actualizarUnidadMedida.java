@@ -1,6 +1,6 @@
 package Servlet;
 
-import Control.AccionesUnidadMedina;
+import Control.AccionesUnidadMedida;
 import Modelo.UnidadMedida;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -42,7 +42,7 @@ public class actualizarUnidadMedida extends HttpServlet {
             e.setNombreUnidadMedida(nombre);
             e.setEstadoUnidadMedida(estadoUnidadMedida);
             
-            int estatus = AccionesUnidadMedina.actualizarUnidadMedida(e);
+            int estatus = AccionesUnidadMedida.actualizarUnidadMedida(e);
             
             if(estatus > 0 ){
                 response.sendRedirect("consultarUnidadMedida.jsp");

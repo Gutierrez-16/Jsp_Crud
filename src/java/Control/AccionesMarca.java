@@ -15,10 +15,9 @@ public class AccionesMarca {
         Conexion cx = new Conexion();
         int status = 0;
         try {
-            String sql = "insert into Marca(NombreMarca, EstadoMarca) values(?,?);";
+            String sql = "insert into Marca(NombreMarca) values(?);";
             PreparedStatement ps = cx.conectar().prepareStatement(sql);
             ps.setString(1, marca.getNombreMarca());
-            ps.setString(2, marca.getEstadoMarca());
             status = ps.executeUpdate();
             System.out.println("Registrado Marca exitoso");
             ps.close();
